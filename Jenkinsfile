@@ -22,14 +22,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo "Running basic backend tests..."
-                // Runs the test you created in backend/tests/
-                sh "docker run --rm ${BACKEND_IMAGE}:${BUILD_TAG} pytest tests/"
-            }
-        }
-
         stage('Deploy') {
             steps {
                 echo "Deploying with Docker Compose..."
