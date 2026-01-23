@@ -110,10 +110,10 @@ volumes:
 networks:
   backend-network:
     driver: bridge
-    name: task_backend_net
+    name: task_backend_net2
   frontend-network:
     driver: bridge
-    name: task_frontend_net
+    name: task_frontend_net2
   jenkins-network:
     driver: bridge
-    name: task_jenkins_net
+    name: task_jenkins_net2
