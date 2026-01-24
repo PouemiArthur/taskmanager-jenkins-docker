@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo "Deploying with Docker Compose..."
                 // Runs from the root folder where your docker-compose.yml is
-                sh "docker-compose up --build"
+                sh "docker-compose up"
             }
         }
     }
