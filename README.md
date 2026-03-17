@@ -1,6 +1,7 @@
 DevOps Containerized Task manager Web Application
+
 Overview:
-    This project demonstrates a containerized Task manager web application architecture locally deployed using Docker and Docker Compose.
+    This project demonstrates a containerized Task manager web application architecture locally deployed using Docker, Docker Compose and Jenkins.
   The system is divided into multiple services with health checks following modern DevOps and microservice deployment practices:
 
   Frontend – Static web interface
@@ -28,6 +29,7 @@ project/
 ├── nginx/
 │   ├── nginx.conf
 │   └── Dockerfile
+|__ Jenkinsfile
 │
 ├── docker-compose.yaml
 ├── .gitignore
@@ -39,6 +41,14 @@ project/
  -environment files
  -temporary files
  -build artifacts
+Jenkinsfile:
+   Defines the CI/CD deployment pipeline for Jenkins.
+ pipeline stages include:
+  -Pull code from repository
+  -Build Docker images
+  -Run tests (no tests yet)
+  -Deploy containers locally using Docker Compose
+  -This enables automated deployment whenever new changes are pushed.
 
 docker-compose.yml:
   Defines and orchestrates the multi-container application.
@@ -50,7 +60,8 @@ services defined:
 -backend
 -frontend
 -nginx(reverse-proxy)
--networks
+-Jenkins – CI/CD pipeline automation
+-networks for container communication
 
 Posgtres:
   This is the main database of the application where all records of completed and uncompleted tasks are stored.
